@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import SceneComponent from "./components/SceneComponent";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// import { onRender, onSceneReady } from "./components/Box";
+import { onRender, onSceneReady } from "./components/Writer";
 
-export default App;
+export default () => (
+  <div>
+    <SceneComponent
+      antialias
+      onSceneReady={onSceneReady}
+      onRender={onRender}
+      id="my-canvas"
+      width="600"
+      height="400"
+    />
+  </div>
+);
